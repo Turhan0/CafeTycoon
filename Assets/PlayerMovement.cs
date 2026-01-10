@@ -18,11 +18,19 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!PauseMenu.isPaused)
+        {
         rb.linearVelocity = moveInput * moveSpeed;
+        }
     }
 
     public void Move(InputAction.CallbackContext context)
     {
+
+        if(PauseMenu.isPaused)
+        {
+            return;
+        }
 	animator.SetBool("isWalking", true);
 
 	if(context.canceled)
