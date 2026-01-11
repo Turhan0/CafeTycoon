@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -42,12 +43,11 @@ public class PauseMenu : MonoBehaviour
 
     public void ExitButton()
     {
+        container.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
         //UnityEngine.SceneManagement.SceneManager.LoadScene("");
-        #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-        #else
-            Application.Quit();
-        #endif
+        SceneManager.LoadSceneAsync(0);
     }
 
 
