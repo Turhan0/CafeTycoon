@@ -8,12 +8,14 @@ public class MapTransitions : MonoBehaviour
     [SerializeField] Direction direction;
     [SerializeField] Transform teleportTargetPosition;
     [SerializeField] float offset;
+    public GameObject interactIndicator;
 
     enum Direction { Up, Down, Left, Right, Teleport }
 
 
     private void Awake()
     {
+        interactIndicator = GameObject.Find("InteractIndicator");
         confiner = FindAnyObjectByType<CinemachineConfiner2D>();
     }
 
@@ -21,8 +23,19 @@ public class MapTransitions : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            confiner.BoundingShape2D = mapBoundary;
-            UpdatePlayerPosition(collision.gameObject);
+            // confiner.BoundingShape2D = mapBoundary;
+            // UpdatePlayerPosition(collision.gameObject);
+            interactIndicator.GetComponent<SpriteRenderer>().enabled = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // confiner.BoundingShape2D = mapBoundary;
+            // UpdatePlayerPosition(collision.gameObject);
+            interactIndicator.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 
