@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!PauseMenu.isPaused)
+        if(!PauseMenu.isPaused || !InventoryManager.menuActivated)
         {
         rb.linearVelocity = moveInput * moveSpeed;
         }
@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
 
-        if(PauseMenu.isPaused)
+        if(PauseMenu.isPaused || InventoryManager.menuActivated)
         {
             return;
         }
