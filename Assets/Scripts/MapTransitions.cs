@@ -9,9 +9,19 @@ public class MapTransitions : MonoBehaviour
     [SerializeField] Transform teleportTargetPosition;
     [SerializeField] float offset;
     public GameObject interactIndicator;
+    public KeyCode interactKey = KeyCode.E;
+    private bool isPlayerInRange = false;
+    private GameObject player;
 
     enum Direction { Up, Down, Left, Right, Teleport }
 
+
+    void Update(){
+        if(isPlayerInRange && Input.GetKeyDown(interactKey)){
+            confiner.BoundingShape2D = mapBoundary;
+            UpdatePlayerPosition(player);
+        }
+    }
 
     private void Awake()
     {
@@ -25,7 +35,9 @@ public class MapTransitions : MonoBehaviour
         {
             // confiner.BoundingShape2D = mapBoundary;
             // UpdatePlayerPosition(collision.gameObject);
+            player = collision.gameObject;
             interactIndicator.GetComponent<SpriteRenderer>().enabled = true;
+            isPlayerInRange = true;
         }
     }
 
@@ -36,6 +48,7 @@ public class MapTransitions : MonoBehaviour
             // confiner.BoundingShape2D = mapBoundary;
             // UpdatePlayerPosition(collision.gameObject);
             interactIndicator.GetComponent<SpriteRenderer>().enabled = false;
+            isPlayerInRange = false;
         }
     }
 
