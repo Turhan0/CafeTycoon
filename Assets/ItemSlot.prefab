@@ -97,6 +97,8 @@ MonoBehaviour:
   isFull: 0
   itemImage: {fileID: 4449451025415215877}
   quantityText: {fileID: 7404400279820667666}
+  selectedShader: {fileID: 6584594229763832160}
+  thisItemSelected: 0
 --- !u!1 &5863667947901847614
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,8 +270,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.5817032, y: -0.77560425}
-  m_SizeDelta: {x: 16.6758, y: 13.1856}
+  m_AnchoredPosition: {x: -1.0692978, y: -0.77570343}
+  m_SizeDelta: {x: 26.139, y: 25.3627}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7846913700626088298
 CanvasRenderer:
@@ -292,7 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

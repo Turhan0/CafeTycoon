@@ -44,5 +44,14 @@ public class InventoryManager : MonoBehaviour
         }
         Debug.Log("Added " + quantity + " of " + itemName + " with sprite " + itemSprite.name + " to inventory.");
     }
+
+    public void DeselectAllSlots()
+    {
+        for (int i = 0; i < itemSlots.Length; i++)
+        {
+            itemSlots[i].selectedShader.SetActive(false);
+            itemSlots[i].thisItemSelected = false;
+        }
+    }
     
 }
