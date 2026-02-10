@@ -15913,6 +15913,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -16070,6 +16071,19 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8a69d378fd9e84da7c83ff14832b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShopSlots
+  coffeeImage: {fileID: 8792820702237980189, guid: 4bac9e670e860384ab01673b400392a9, type: 3}
 --- !u!1 &580042453
 GameObject:
   m_ObjectHideFlags: 0
@@ -16188,7 +16202,7 @@ MonoBehaviour:
   itemName: Coffee
   quantity: 1
   sprite: {fileID: 8792820702237980189, guid: 4bac9e670e860384ab01673b400392a9, type: 3}
-  itemDescription: Cofeeeeeeeeeeeee
+  itemDescription: A hot cup of coffee to keep you awake.
 --- !u!50 &582712151
 Rigidbody2D:
   serializedVersion: 5
@@ -16845,7 +16859,7 @@ MonoBehaviour:
   itemName: Coffee
   quantity: 1
   sprite: {fileID: 8792820702237980189, guid: 4bac9e670e860384ab01673b400392a9, type: 3}
-  itemDescription: Cofeeeeeeeeeeeee
+  itemDescription: A hot cup of coffee to keep you awake.
 --- !u!1 &701079355
 GameObject:
   m_ObjectHideFlags: 0
@@ -16928,7 +16942,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 701079358}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 519420035}
+        m_TargetAssemblyTypeName: ShopSlots, Assembly-CSharp
+        m_MethodName: addCoffeeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &701079358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18346,7 +18372,7 @@ MonoBehaviour:
   itemName: Coffee
   quantity: 1
   sprite: {fileID: 8792820702237980189, guid: 4bac9e670e860384ab01673b400392a9, type: 3}
-  itemDescription: Cofeeeeeeeeeeeee
+  itemDescription: A hot cup of coffee to keep you awake.
 --- !u!50 &965638396
 Rigidbody2D:
   serializedVersion: 5
@@ -23413,7 +23439,7 @@ MonoBehaviour:
   itemName: Coffee
   quantity: 1
   sprite: {fileID: 8792820702237980189, guid: 4bac9e670e860384ab01673b400392a9, type: 3}
-  itemDescription: Cofeeeeeeeeeeeee
+  itemDescription: A hot cup of coffee to keep you awake.
 --- !u!50 &1706747754
 Rigidbody2D:
   serializedVersion: 5
