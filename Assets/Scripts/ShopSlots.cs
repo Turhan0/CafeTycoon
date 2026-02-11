@@ -13,10 +13,23 @@ public class ShopSlots : MonoBehaviour
 
     public void addCoffeeItem()
     {
-        //Sprite coffeeImage = Resources.Load<Sprite>("Assets/Sprites/Coffee_Mug_0");
-        inventoryManager.AddItem("Coffee", 1, coffeeImage, "A hot cup of coffee to keep you awake.");
+        if(MoneySystem.playerMoney >= 2)
+        {    
+            if(!inventoryManager.itemSlots[19].isFull)
+            {
+                inventoryManager.AddItem("Coffee", 1, coffeeImage, "A hot cup of coffee to keep you awake.");
+                MoneySystem.playerMoney -= 2; 
+                MoneySystem.instance.UpdateMoneyUI();
+            }
+            else
+            {
+             Debug.Log("Inventory is full. Cannot add more items.");
+            }
+        }
+        else
+        {
+            Debug.Log("Not enough money to buy coffee.");
+        }
     }
-
-     
 
 }
