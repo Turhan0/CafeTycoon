@@ -20,6 +20,7 @@ public class ShopSlots : MonoBehaviour
                 inventoryManager.AddItem("Coffee", 1, coffeeImage, "A hot cup of coffee to keep you awake.");
                 MoneySystem.playerMoney -= 2; 
                 MoneySystem.instance.UpdateMoneyUI();
+                AudioManager.Instance.PlayPurchaseSound();
             }
             else
             {
@@ -28,6 +29,7 @@ public class ShopSlots : MonoBehaviour
         }
         else
         {
+            AudioManager.Instance.PlayPurchaseFailSound();
             Debug.Log("Not enough money to buy coffee.");
         }
     }
