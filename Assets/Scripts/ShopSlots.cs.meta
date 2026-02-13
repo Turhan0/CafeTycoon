@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: ec8a69d378fd9e84da7c83ff14832b1e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - coffeeImage: {instanceID: 0}
+  - teaImage: {instanceID: 0}
+  - croissantImage: {instanceID: 0}
+  - cakeImage: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
