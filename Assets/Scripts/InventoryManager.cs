@@ -48,5 +48,21 @@ public class InventoryManager : MonoBehaviour
             itemSlots[i].thisItemSelected = false;
         }
     }
+
+    public void DiscardAllItems()
+    {
+        for (int i = 0; i < itemSlots.Length; i++)
+        {
+            itemSlots[i].itemName = null;
+            itemSlots[i].quantity = 0;
+            itemSlots[i].itemSprite = null;
+            itemSlots[i].isFull = false;
+            itemSlots[i].itemDescription = null;
+
+            itemSlots[i].quantityText.text = "";
+            itemSlots[i].quantityText.enabled = false;
+            itemSlots[i].itemImage.sprite = null;
+        }
+    }
     
 }

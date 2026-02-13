@@ -13,8 +13,8 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public string itemDescription;
 
     // Item Slot
-    [SerializeField] private Image itemImage;
-    [SerializeField] private TMP_Text quantityText;
+    [SerializeField] public Image itemImage;
+    [SerializeField] public TMP_Text quantityText;
 
     // Item Description
     public Image ItemDescriptionImage;
