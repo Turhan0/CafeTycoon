@@ -19867,7 +19867,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4723107735738678597, guid: 86d970d75f899e64f8c3547b2996507f, type: 3}
+  m_Sprite: {fileID: 1328963210, guid: 1c882454dd492ad4b9e31cdd5de85e39, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22268,7 +22268,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.068, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 7.5, y: 7.5, z: 7.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1829118801}
@@ -22322,7 +22322,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 4723107735738678597, guid: 86d970d75f899e64f8c3547b2996507f, type: 3}
+  m_Sprite: {fileID: -2262714819377972387, guid: db2a8f812167ebc44abb17d33945747e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
