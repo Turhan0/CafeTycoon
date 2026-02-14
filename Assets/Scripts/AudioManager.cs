@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip discardSound;
     [SerializeField] private AudioClip menuOpenSound;
     [SerializeField] private AudioClip menuCloseSound;
+    [SerializeField] private AudioClip footstepSound;
 
 
     void Awake()
@@ -41,9 +42,13 @@ public class AudioManager : MonoBehaviour
     {
         SFXsource.PlayOneShot(menuOpenSound);
     }
-        public void PlayMenuCloseSound()
+    public void PlayMenuCloseSound()
     {
         SFXsource.PlayOneShot(menuCloseSound);
+    }
+    public void PlayFootstepSound()
+    {
+        SFXsource.PlayOneShot(footstepSound);
     }
 
 }

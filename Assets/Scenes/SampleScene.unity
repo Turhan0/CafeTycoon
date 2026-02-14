@@ -18832,6 +18832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   moveSpeed: 5
+  footstepInterval: 0.6
 --- !u!50 &798606860
 Rigidbody2D:
   serializedVersion: 5
@@ -21729,6 +21730,7 @@ MonoBehaviour:
   discardSound: {fileID: 8300000, guid: 359123970dbb21a4a920e693b04ab4c7, type: 3}
   menuOpenSound: {fileID: 8300000, guid: 487de8fcce73d8547b64af2b1dc9e8d4, type: 3}
   menuCloseSound: {fileID: 8300000, guid: 194a74049ae996b438569849bc7db415, type: 3}
+  footstepSound: {fileID: 8300000, guid: fadc554dee670aa409d3afbb58e79a06, type: 3}
 --- !u!82 &1266612533
 AudioSource:
   m_ObjectHideFlags: 0
