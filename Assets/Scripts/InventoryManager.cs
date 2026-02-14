@@ -16,6 +16,7 @@ public class InventoryManager : MonoBehaviour
                 Time.timeScale = 0f;
                 InventoryMenu.SetActive(true);
                 menuActivated = true;
+                AudioManager.Instance.PlayMenuOpenSound();
             }
 
             else if(Input.GetKeyDown(KeyCode.I) && menuActivated)
@@ -23,6 +24,7 @@ public class InventoryManager : MonoBehaviour
                 Time.timeScale = 1f;
                 InventoryMenu.SetActive(false);
                 menuActivated = false;
+                AudioManager.Instance.PlayMenuCloseSound();
             }
         }
     }
@@ -51,18 +53,28 @@ public class InventoryManager : MonoBehaviour
 
     public void DiscardAllItems()
     {
-        for (int i = 0; i < itemSlots.Length; i++)
+        if(itemSlots[0].itemName == null)
         {
-            itemSlots[i].itemName = null;
-            itemSlots[i].quantity = 0;
-            itemSlots[i].itemSprite = null;
-            itemSlots[i].isFull = false;
-            itemSlots[i].itemDescription = null;
-
-            itemSlots[i].quantityText.text = "";
-            itemSlots[i].quantityText.enabled = false;
-            itemSlots[i].itemImage.sprite = null;
+            Debug.Log("No items to discard.");
+            return;
         }
+        else
+        {
+            for (int i = 0; i < itemSlots.Length; i++)
+            {
+                itemSlots[i].itemName = null;
+                itemSlots[i].quantity = 0;
+                itemSlots[i].itemSprite = null;
+                itemSlots[i].isFull = false;
+                itemSlots[i].itemDescription = null;
+
+                itemSlots[i].quantityText.text = "";
+                itemSlots[i].quantityText.enabled = false;
+                itemSlots[i].itemImage.sprite = null;
+            }
+            AudioManager.Instance.PlayDiscardSound();
+        }
+
     }
     
 }

@@ -18699,7 +18699,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 4723107735738678597, guid: 86d970d75f899e64f8c3547b2996507f, type: 3}
+  m_Sprite: {fileID: 4723107735738678597, guid: 6be3c0f717faf2c4b848b85456eadd8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -18719,8 +18719,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.027, y: 0.06, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 241952582}
   m_Father: {fileID: 0}
@@ -18832,6 +18832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   moveSpeed: 5
+  footstepInterval: 0.6
 --- !u!50 &798606860
 Rigidbody2D:
   serializedVersion: 5
@@ -21726,6 +21727,10 @@ MonoBehaviour:
   SFXsource: {fileID: 1266612533}
   purchaseSound: {fileID: 8300000, guid: d188e9b4fbcd8cd47817009935b59012, type: 3}
   purchaseFailSound: {fileID: 8300000, guid: bed237064c38e3948a8b72271975d2c5, type: 3}
+  discardSound: {fileID: 8300000, guid: 359123970dbb21a4a920e693b04ab4c7, type: 3}
+  menuOpenSound: {fileID: 8300000, guid: 487de8fcce73d8547b64af2b1dc9e8d4, type: 3}
+  menuCloseSound: {fileID: 8300000, guid: 194a74049ae996b438569849bc7db415, type: 3}
+  footstepSound: {fileID: 8300000, guid: fadc554dee670aa409d3afbb58e79a06, type: 3}
 --- !u!82 &1266612533
 AudioSource:
   m_ObjectHideFlags: 0

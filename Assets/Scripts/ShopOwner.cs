@@ -29,12 +29,14 @@ public class ShopOwner : MonoBehaviour
             Time.timeScale = 0f;
             shopUIMenu.SetActive(true);
             shopUImenuActivated = true;
+            AudioManager.Instance.PlayMenuOpenSound();
         }
         else if (shopUImenuActivated && playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             Time.timeScale = 1f;
             shopUIMenu.SetActive(false);
             shopUImenuActivated = false;
+            AudioManager.Instance.PlayMenuCloseSound();
         }
     }
 
