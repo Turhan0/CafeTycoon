@@ -8,8 +8,6 @@ public class ShopSlots : MonoBehaviour
     [SerializeField] private Sprite croissantImage;
     [SerializeField] private Sprite cakeImage;
     
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
