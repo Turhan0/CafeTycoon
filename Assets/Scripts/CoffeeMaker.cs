@@ -6,6 +6,7 @@ public class CoffeeMaker : MonoBehaviour
     public GameObject coffeeMakerUIMenu;
     private bool coffeeMakerUIMenuActivated = false;
     private InventoryManager inventoryManager;
+    [SerializeField] private Sprite coffeeImage;
 
     void Start()
     {
@@ -43,6 +44,42 @@ public class CoffeeMaker : MonoBehaviour
             coffeeMakerUIMenu.SetActive(false);
             coffeeMakerUIMenuActivated = false;
             AudioManager.Instance.PlayMenuCloseSound();
+        }
+    }
+
+    public void MakeCoffee()
+    {
+        int coffee_index = -1;
+        int water_index = -1;
+
+        for(int i = 0; i < inventoryManager.itemSlots.Length; i++)
+        {
+            if(inventoryManager.itemSlots[i].itemName == "Coffee Beans")
+            {
+                coffee_index = i;
+                break;
+            }
+        }
+        for(int i = 0; i < inventoryManager.itemSlots.Length; i++)
+        {
+            if(inventoryManager.itemSlots[i].itemName == "Water")
+            {
+                water_index = i;
+                break;
+            }
+        }
+
+        if(coffee_index != -1 && water_index != -1)
+        {
+            inventoryManager.RemoveItem(coffee_index);
+            inventoryManager.RemoveItem(water_index);
+            inventoryManager.AddItem("Coffee", 1, coffeeImage, "A hot cup of coffee to keep you awake.");
+            //AudioManager.Instance.PlayCraftingSound();
+        }
+        else
+        {
+            //AudioManager.Instance.PlayCraftingFailSound();
+            Debug.Log("Not enough ingredients to make coffee.");
         }
     }
 }

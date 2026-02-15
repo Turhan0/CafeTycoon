@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class MoneySystem : MonoBehaviour
 {
     [SerializeField] public TextMeshProUGUI moneyText;
-    static public double playerMoney = 10;
+    static public double playerMoney = 10000.0;
     static public MoneySystem instance;
 
     void Awake()

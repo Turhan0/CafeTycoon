@@ -42,6 +42,19 @@ public class InventoryManager : MonoBehaviour
         Debug.Log("Added " + quantity + " of " + itemName + " with sprite " + itemSprite.name + " to inventory.");
     }
 
+    public void RemoveItem(int index)
+    {
+        itemSlots[index].itemName = null;
+        itemSlots[index].quantity = 0;
+        itemSlots[index].itemSprite = null;
+        itemSlots[index].isFull = false;
+        itemSlots[index].itemDescription = null;
+
+        itemSlots[index].quantityText.text = "";
+        itemSlots[index].quantityText.enabled = false;
+        itemSlots[index].itemImage.sprite = null;
+    }
+
     public void DeselectAllSlots()
     {
         for (int i = 0; i < itemSlots.Length; i++)
