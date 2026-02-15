@@ -7,6 +7,9 @@ public class ShopSlots : MonoBehaviour
     [SerializeField] private Sprite teaImage;
     [SerializeField] private Sprite croissantImage;
     [SerializeField] private Sprite cakeImage;
+    [SerializeField] private Sprite coffeeBeansImage;
+    [SerializeField] private Sprite teaLeavesImage;
+    [SerializeField] private Sprite waterImage;
     
     void Start()
     {
@@ -101,7 +104,76 @@ public class ShopSlots : MonoBehaviour
         else
         {
             AudioManager.Instance.PlayPurchaseFailSound();
-            Debug.Log("Not enough money to buy croissant.");
+            Debug.Log("Not enough money to buy cake.");
+        }
+    }
+
+    public void addCoffeeBeansItem()
+    {
+        if(MoneySystem.playerMoney >= 0.4)
+        {    
+            if(!inventoryManager.itemSlots[19].isFull)
+            {
+                inventoryManager.AddItem("Coffee Beans", 1, coffeeBeansImage, "Freshly roasted coffee beans. Perfect for brewing your own coffee.");
+                MoneySystem.playerMoney -= 0.4; 
+                MoneySystem.instance.UpdateMoneyUI();
+                AudioManager.Instance.PlayPurchaseSound();
+            }
+            else
+            {
+             Debug.Log("Inventory is full. Cannot add more items.");
+            }
+        }
+        else
+        {
+            AudioManager.Instance.PlayPurchaseFailSound();
+            Debug.Log("Not enough money to buy coffee beans.");
+        }
+    }
+
+    public void addTeaLeavesItem()
+    {
+        if(MoneySystem.playerMoney >= 0.2)
+        {    
+            if(!inventoryManager.itemSlots[19].isFull)
+            {
+                inventoryManager.AddItem("Tea Leaves", 1, teaLeavesImage, "Freshly picked tea leaves. Perfect for brewing your own tea.");
+                MoneySystem.playerMoney -= 0.2; 
+                MoneySystem.instance.UpdateMoneyUI();
+                AudioManager.Instance.PlayPurchaseSound();
+            }
+            else
+            {
+             Debug.Log("Inventory is full. Cannot add more items.");
+            }
+        }
+        else
+        {
+            AudioManager.Instance.PlayPurchaseFailSound();
+            Debug.Log("Not enough money to buy tea leaves.");
+        }
+    }
+
+    public void addWaterItem()
+    {
+        if(MoneySystem.playerMoney >= 0.2)
+        {    
+            if(!inventoryManager.itemSlots[19].isFull)
+            {
+                inventoryManager.AddItem("Water", 1, waterImage, "A bottle of water. Perfect for hydration.");
+                MoneySystem.playerMoney -= 0.2; 
+                MoneySystem.instance.UpdateMoneyUI();
+                AudioManager.Instance.PlayPurchaseSound();
+            }
+            else
+            {
+             Debug.Log("Inventory is full. Cannot add more items.");
+            }
+        }
+        else
+        {
+            AudioManager.Instance.PlayPurchaseFailSound();
+            Debug.Log("Not enough money to buy water.");
         }
     }
 
