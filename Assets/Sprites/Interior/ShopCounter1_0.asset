@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Shop_Counter_5
+  m_Name: ShopCounter1_0
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
-  m_Sprite: {fileID: 594106854, guid: 37b420f7fea8a1d428b7940b73269961, type: 3}
+  m_Sprite: {fileID: 5230597495936261210, guid: 5df657a85e459cb4d83a3fbb07ddc36a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
