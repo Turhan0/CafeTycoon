@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class CoffeeMaker : MonoBehaviour
+public class TeaMaker : MonoBehaviour
 {
     public bool playerInRange;
-    public GameObject coffeeMakerUIMenu;
-    private bool coffeeMakerUIMenuActivated = false;
+    public GameObject teaMakerUIMenu;
+    private bool teaMakerUIMenuActivated = false;
     private InventoryManager inventoryManager;
-    [SerializeField] private Sprite coffeeImage;
+    [SerializeField] private Sprite teaImage;
 
     void Start()
     {
@@ -31,32 +31,32 @@ public class CoffeeMaker : MonoBehaviour
 
     void Update()
     {
-        if (!coffeeMakerUIMenuActivated && playerInRange && Input.GetKeyDown(KeyCode.E))
+        if (!teaMakerUIMenuActivated && playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             Time.timeScale = 0f;
-            coffeeMakerUIMenu.SetActive(true);
-            coffeeMakerUIMenuActivated = true;
+            teaMakerUIMenu.SetActive(true);
+            teaMakerUIMenuActivated = true;
             AudioManager.Instance.PlayMenuOpenSound();
         }
-        else if (coffeeMakerUIMenuActivated && playerInRange && Input.GetKeyDown(KeyCode.E))
+        else if (teaMakerUIMenuActivated && playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             Time.timeScale = 1f;
-            coffeeMakerUIMenu.SetActive(false);
-            coffeeMakerUIMenuActivated = false;
+            teaMakerUIMenu.SetActive(false);
+            teaMakerUIMenuActivated = false;
             AudioManager.Instance.PlayMenuCloseSound();
         }
     }
 
-    public void MakeCoffee()
+    public void MakeTea()
     {
-        int coffee_index = -1;
+        int tea_index = -1;
         int water_index = -1;
 
         for(int i = 0; i < inventoryManager.itemSlots.Length; i++)
         {
-            if(inventoryManager.itemSlots[i].itemName == "Coffee Beans")
+            if(inventoryManager.itemSlots[i].itemName == "Tea Leaves")
             {
-                coffee_index = i;
+                tea_index = i;
                 break;
             }
         }
@@ -69,17 +69,17 @@ public class CoffeeMaker : MonoBehaviour
             }
         }
 
-        if(coffee_index != -1 && water_index != -1)
+        if(tea_index != -1 && water_index != -1)
         {
-            inventoryManager.RemoveItem(coffee_index);
+            inventoryManager.RemoveItem(tea_index);
             inventoryManager.RemoveItem(water_index);
-            inventoryManager.AddItem("Coffee", 1, coffeeImage, "A hot cup of coffee to keep you awake.");
+            inventoryManager.AddItem("Tea", 1, teaImage, "A hot cup of tea perfect choice for a relaxing break.");
             //AudioManager.Instance.PlayMakeSound();
         }
         else
         {
             //AudioManager.Instance.PlayMakeFailSound();
-            Debug.Log("Not enough ingredients to make coffee.");
+            Debug.Log("Not enough ingredients to make tea.");
         }
     }
 }
