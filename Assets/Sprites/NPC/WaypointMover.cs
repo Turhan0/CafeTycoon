@@ -43,11 +43,6 @@ public class WaypointMover : MonoBehaviour
                 currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
             }
         }
-        else if (isInside)
-        {
-            Vector3 insideTargetPosition = insideWaypoints[npcID].position;
-            transform.position = Vector3.MoveTowards(transform.position, insideTargetPosition, Speed * Time.deltaTime);
-        }
             
 
     }
@@ -63,6 +58,8 @@ public class WaypointMover : MonoBehaviour
                 {
                     collider.isTrigger = false;
                 }
+                            Vector3 insideTargetPosition = insideWaypoints[npcID].position;
+            transform.position = Vector3.MoveTowards(transform.position, insideTargetPosition, Speed * Time.deltaTime);
             }
     private void Shuffle<T>(T[] array)
     {

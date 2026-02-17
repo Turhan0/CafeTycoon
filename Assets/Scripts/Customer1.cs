@@ -7,6 +7,7 @@ public class Customer1 : MonoBehaviour
     private bool npc1UIMenuActivated = false;
     private InventoryManager inventoryManager;
     public bool order1Submitted = false;
+    public GameObject exit; // Example target position
 
     void Start()
     {
@@ -91,5 +92,9 @@ public class Customer1 : MonoBehaviour
             AudioManager.Instance.PlayActionFailSound();
             Debug.Log("Not enough items to submit order.");
         }
+
+        Vector3 targetPosition = exit.GetComponent<Transform>().position; // Example target position
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, 2f * Time.deltaTime);
+        Destroy(gameObject, 5f); // Destroy the customer after 3 seconds to allow time for them to move towards the exit
     }
 }
