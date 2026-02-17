@@ -12,6 +12,7 @@ public class MapTransitions : MonoBehaviour
     public KeyCode interactKey = KeyCode.E;
     private bool isPlayerInRange = false;
     private GameObject player;
+    public bool isShop = false;
 
     enum Direction { Up, Down, Left, Right, Teleport }
 
@@ -40,6 +41,10 @@ public class MapTransitions : MonoBehaviour
             interactIndicator.GetComponent<SpriteRenderer>().enabled = true;
             isPlayerInRange = true;
         }
+        if (collision.gameObject.CompareTag("NPC") && !isShop)
+        {
+            UpdateNPCPosition(collision.gameObject);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -54,6 +59,37 @@ public class MapTransitions : MonoBehaviour
     }
 
     private void UpdatePlayerPosition(GameObject player)
+    {
+        if (direction == Direction.Teleport)
+        {
+            player.transform.position = teleportTargetPosition.position;
+            return;
+        }
+
+        Vector3 newPos = player.transform.position;
+
+        float offset = 2f; // Distance to move the player
+
+        switch (direction)
+        {
+            case Direction.Up:
+                newPos.y += offset;
+                break;
+            case Direction.Down:
+                newPos.y -= offset;
+                break;
+            case Direction.Left:
+                newPos.x -= offset;
+                break;
+            case Direction.Right:
+                newPos.x += offset;
+                break;
+        }
+
+        player.transform.position = newPos;
+    }
+
+    private void UpdateNPCPosition(GameObject player)
     {
         if (direction == Direction.Teleport)
         {
