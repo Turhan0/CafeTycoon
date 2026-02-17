@@ -36,6 +36,7 @@ public class CoffeeMaker : MonoBehaviour
             Time.timeScale = 0f;
             coffeeMakerUIMenu.SetActive(true);
             coffeeMakerUIMenuActivated = true;
+             Cursor.lockState  =  CursorLockMode.None;
             AudioManager.Instance.PlayMenuOpenSound();
         }
         else if (coffeeMakerUIMenuActivated && playerInRange && Input.GetKeyDown(KeyCode.E))
@@ -43,6 +44,7 @@ public class CoffeeMaker : MonoBehaviour
             Time.timeScale = 1f;
             coffeeMakerUIMenu.SetActive(false);
             coffeeMakerUIMenuActivated = false;
+            Cursor.lockState  =  CursorLockMode.Locked;
             AudioManager.Instance.PlayMenuCloseSound();
         }
     }
@@ -74,11 +76,11 @@ public class CoffeeMaker : MonoBehaviour
             inventoryManager.RemoveItem(coffee_index);
             inventoryManager.RemoveItem(water_index);
             inventoryManager.AddItem("Coffee", 1, coffeeImage, "A hot cup of coffee to keep you awake.");
-            //AudioManager.Instance.PlayMakeSound();
+            AudioManager.Instance.PlayDrinkmakerSound();
         }
         else
         {
-            //AudioManager.Instance.PlayMakeFailSound();
+            AudioManager.Instance.PlayActionFailSound();
             Debug.Log("Not enough ingredients to make coffee.");
         }
     }

@@ -15,4 +15,8 @@ public class MainMenu : MonoBehaviour
             Application.Quit();
         #endif
     }
+    public void OpenSettings()
+    {
+
+    }
 }

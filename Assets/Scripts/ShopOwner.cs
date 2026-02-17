@@ -29,6 +29,7 @@ public class ShopOwner : MonoBehaviour
             Time.timeScale = 0f;
             shopUIMenu.SetActive(true);
             shopUImenuActivated = true;
+            Cursor.lockState  =  CursorLockMode.None;
             AudioManager.Instance.PlayMenuOpenSound();
         }
         else if (shopUImenuActivated && playerInRange && Input.GetKeyDown(KeyCode.E))
@@ -36,6 +37,7 @@ public class ShopOwner : MonoBehaviour
             Time.timeScale = 1f;
             shopUIMenu.SetActive(false);
             shopUImenuActivated = false;
+            Cursor.lockState  =  CursorLockMode.Locked;
             AudioManager.Instance.PlayMenuCloseSound();
         }
     }

@@ -16,6 +16,7 @@ public class InventoryManager : MonoBehaviour
                 Time.timeScale = 0f;
                 InventoryMenu.SetActive(true);
                 menuActivated = true;
+                Cursor.lockState  =  CursorLockMode.None;
                 AudioManager.Instance.PlayMenuOpenSound();
             }
 
@@ -24,6 +25,7 @@ public class InventoryManager : MonoBehaviour
                 Time.timeScale = 1f;
                 InventoryMenu.SetActive(false);
                 menuActivated = false;
+                Cursor.lockState  =  CursorLockMode.Locked;
                 AudioManager.Instance.PlayMenuCloseSound();
             }
         }

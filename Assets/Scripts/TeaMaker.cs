@@ -36,6 +36,7 @@ public class TeaMaker : MonoBehaviour
             Time.timeScale = 0f;
             teaMakerUIMenu.SetActive(true);
             teaMakerUIMenuActivated = true;
+            Cursor.lockState  =  CursorLockMode.None;
             AudioManager.Instance.PlayMenuOpenSound();
         }
         else if (teaMakerUIMenuActivated && playerInRange && Input.GetKeyDown(KeyCode.E))
@@ -43,6 +44,7 @@ public class TeaMaker : MonoBehaviour
             Time.timeScale = 1f;
             teaMakerUIMenu.SetActive(false);
             teaMakerUIMenuActivated = false;
+            Cursor.lockState  =  CursorLockMode.Locked;
             AudioManager.Instance.PlayMenuCloseSound();
         }
     }
@@ -74,11 +76,11 @@ public class TeaMaker : MonoBehaviour
             inventoryManager.RemoveItem(tea_index);
             inventoryManager.RemoveItem(water_index);
             inventoryManager.AddItem("Tea", 1, teaImage, "A hot cup of tea perfect choice for a relaxing break.");
-            //AudioManager.Instance.PlayMakeSound();
+            AudioManager.Instance.PlayDrinkmakerSound();
         }
         else
         {
-            //AudioManager.Instance.PlayMakeFailSound();
+            AudioManager.Instance.PlayActionFailSound();
             Debug.Log("Not enough ingredients to make tea.");
         }
     }

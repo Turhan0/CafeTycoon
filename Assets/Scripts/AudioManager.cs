@@ -11,6 +11,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip menuOpenSound;
     [SerializeField] private AudioClip menuCloseSound;
     [SerializeField] private AudioClip footstepSound;
+    [SerializeField] private AudioClip doorSound;
+    [SerializeField] private AudioClip drinkmakerSound;
+    [SerializeField] private AudioClip actionFailSound;
+    [SerializeField] private AudioClip buttonClickSound;
 
 
     void Awake()
@@ -49,6 +53,26 @@ public class AudioManager : MonoBehaviour
     public void PlayFootstepSound()
     {
         SFXsource.PlayOneShot(footstepSound);
+    }
+
+    public void PlayDoorSound()
+    {
+        SFXsource.PlayOneShot(doorSound);
+    }
+
+    public void PlayDrinkmakerSound()
+    {
+        SFXsource.PlayOneShot(drinkmakerSound);
+    }
+
+    public void PlayActionFailSound()
+    {
+        SFXsource.PlayOneShot(actionFailSound);
+    }
+
+    public void PlayButtonClickSound()
+    {
+        SFXsource.PlayOneShot(buttonClickSound);
     }
 
 }

@@ -20,6 +20,7 @@ public class MapTransitions : MonoBehaviour
         if(isPlayerInRange && Input.GetKeyDown(interactKey)){
             confiner.BoundingShape2D = mapBoundary;
             UpdatePlayerPosition(player);
+            AudioManager.Instance.PlayDoorSound();
         }
     }
 

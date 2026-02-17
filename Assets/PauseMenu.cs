@@ -22,6 +22,7 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
+        AudioManager.Instance.PlayButtonClickSound();
         Cursor.lockState  =  CursorLockMode.None;
         container.SetActive(true);
         Time.timeScale = 0f;
@@ -30,6 +31,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeButton()
     {
+        AudioManager.Instance.PlayButtonClickSound();
         Cursor.lockState  =  CursorLockMode.Locked;
         container.SetActive(false);
         Time.timeScale = 1f;
@@ -38,11 +40,22 @@ public class PauseMenu : MonoBehaviour
 
     public void SettingsButton()
     {
-        
+        AudioManager.Instance.PlayButtonClickSound();
+    }
+
+    public void SaveButton()
+    {
+        AudioManager.Instance.PlayButtonClickSound();
+        // SaveController saveController = GameObject.FindObjectOfType<SaveController>();
+        // if(saveController != null)
+        // {
+        //     saveController.SaveGame(new SaveData());
+        // }
     }
 
     public void ExitButton()
     {
+        AudioManager.Instance.PlayButtonClickSound();
         container.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
